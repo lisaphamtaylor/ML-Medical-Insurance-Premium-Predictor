@@ -1,7 +1,5 @@
 import numpy as np
 import pandas as pd
 import seaborn as sns
-import matplotlib as pt
+import matplotlib.pyplot as plt
 
-df=pd.read_csv('insurance.csv')
-print(df)
