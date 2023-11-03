@@ -52,10 +52,10 @@ def plot_scatter_chart(dataset, features=None):
 # plot_bar_chart(df, ['sex','children','smoker','region'])
 # plot_scatter_chart(df, ['age','bmi'])
 
-"""Data Preprocessing"""
+"""DATA PREPROCESSING"""
 df.drop_duplicates(inplace=True)    # drops duplicate values
-# sns.boxplot(df['bmi'])       # shows outliers
-# plt.show()
+sns.boxplot(df['bmi'])       # shows outliers
+plt.show()
 '''caclulating IQR to determine outlier caps'''
 Q1=df['bmi'].quantile(0.25)
 Q2=df['bmi'].quantile(0.5)
@@ -63,10 +63,15 @@ Q3=df['bmi'].quantile(0.75)
 iqr=Q3-Q1
 lowlim=Q1-1.5*iqr   # lower limit as set by IQR
 upplim=Q3+1.5*iqr   # upper limit as set by IQR
-# print(lowlim)
-# print(upplim)
 
-df['bmi'] df['bmi'].clip(lower=lowlim, upper=upplim)        # caps outliers
-sns.boxplot(df['bmi'])       # shows outliers
-plt.show()
-df.info()
+df['bmi'] = df['bmi'].clip(lower=lowlim, upper=upplim)        # caps outliers to normalize values for model training
+# sns.boxplot(df['bmi'])       # shows outliers
+# plt.show()
+
+'''encoding data--converting categorical data to numerical data'''
+df['sex']=df['sex'].map({'male':0,'female':1})
+df['smoker']=df['smoker'].map({'yes':1,'no':0})
+df['region']=df['region'].map({'northwest':0, 'northeast':1,'southeast':2,'southwest':3})
+
+# print(df.corr())        # prints correlation mx
+
