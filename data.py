@@ -54,8 +54,8 @@ def plot_scatter_chart(dataset, features=None):
 
 """DATA PREPROCESSING"""
 df.drop_duplicates(inplace=True)    # drops duplicate values
-sns.boxplot(df['bmi'])       # shows outliers
-plt.show()
+# sns.boxplot(df['bmi'])       # shows outliers
+# plt.show()
 '''caclulating IQR to determine outlier caps'''
 Q1=df['bmi'].quantile(0.25)
 Q2=df['bmi'].quantile(0.5)
