@@ -11,7 +11,7 @@
 
 ## Introduction
 
-What's My Premium is a health insurance premium prediction model that uses machine learning to predict the cost of health insurance based on a number of factors. The model is trained on a dataset of 1338 entries, and uses a linear regression model to predict the cost of health insurance. 
+What's My Premium is a health insurance premium prediction model that uses machine learning to predict the cost of health insurance based on a number of factors. The model is trained on a dataset of 1338 entries. This code compares the cross value score and train/test accuracies of different ML models--Linear Regression, Support Vector Machine, Random Forest, Gradient Boost, XGBoost--to identify the best model for prediction.
 
 Dataset can be found [here](https://www.kaggle.com/datasets/noordeen/insurance-premium-prediction/data).
 Check out the original setup inspiration [here](https://www.geeksforgeeks.org/medical-insurance-price-prediction-using-machine-learning-python/).
